@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#23483f">
+<title>Romantyzm — notatka do odpowiedzi ustnej</title>
+<style>
+:root{
+  --bg:#f5f3ed;--paper:#fffefa;--ink:#24332e;--muted:#68756e;
+  --green:#23483f;--green-soft:#e8f0e9;--gold:#a16a20;
+  --gold-soft:#fff3d9;--line:#dce2d9;--shadow:0 12px 35px #233c3010;
+  --radius:20px
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.75 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+button,a,input{ -webkit-tap-highlight-color:transparent }
+button{font:inherit;cursor:pointer}
+a{color:var(--green)}
+button:focus-visible,a:focus-visible,summary:focus-visible{
+  outline:3px solid var(--gold);outline-offset:4px
+}
+.topbar{position:sticky;top:0;z-index:20;background:#fffefaf5;
+  border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+.topbar-inner{max-width:1160px;margin:auto;padding:12px 24px;
+  display:flex;align-items:center;justify-content:space-between;gap:15px}
+.brand{font-weight:850;letter-spacing:.05em;font-size:.85rem;color:var(--green)}
+.tools{display:flex;gap:8px;flex-wrap:wrap}
+.btn{border:1px solid var(--line);background:var(--paper);
+  color:var(--green);border-radius:11px;padding:8px 14px;font-weight:650}
+.btn:hover{background:var(--green-soft)}
+.btn.primary{background:var(--green);color:white;border-color:var(--green)}
+.wrap{max-width:1160px;margin:auto;padding:38px 24px 70px}
+.hero{background:var(--green);color:#fffdf4;border-radius:28px;
+  padding:42px;position:relative;overflow:hidden}
+.hero:after{content:"R";position:absolute;right:24px;top:-95px;
+  font:350px Georgia,serif;opacity:.055;pointer-events:none}
+.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.75rem;
+  font-weight:800;opacity:.8}
+h1{font:clamp(2.8rem,7vw,5rem)/1.08 Georgia,serif;margin:15px 0}
+.hero p{max-width:650px;color:#e1eae1}
+.pills{display:flex;gap:9px;flex-wrap:wrap;margin-top:24px}
+.pill{border:1px solid #ffffff35;border-radius:999px;
+  padding:5px 13px;font-size:.85rem}
+.layout{display:grid;grid-template-columns:215px minmax(0,1fr);
+  gap:30px;margin-top:30px}
+aside nav{position:sticky;top:88px}
+.nav-title{font-size:.73rem;letter-spacing:.12em;font-weight:800;
+  color:var(--muted);margin-bottom:12px}
+aside a{display:block;text-decoration:none;padding:8px 11px;
+  border-radius:10px;color:var(--muted);font-size:.92rem}
+aside a:hover{background:var(--green-soft);color:var(--green)}
+main{min-width:0}
+section{background:var(--paper);border:1px solid var(--line);
+  border-radius:var(--radius);padding:28px;margin-bottom:22px;
+  box-shadow:var(--shadow)}
+.section-top{display:flex;gap:12px;align-items:center}
+.num{display:inline-grid;place-items:center;width:34px;height:34px;
+  flex-shrink:0;border-radius:10px;background:var(--green-soft);
+  color:var(--green);font-size:.8rem;font-weight:850}
+h2{font:700 1.65rem/1.25 Georgia,serif;margin:4px 0}
+h3{font-size:1.05rem;line-height:1.45;margin:23px 0 8px}
+p{margin:12px 0}
+ul,ol{padding-left:23px}
+li{margin:7px 0}
+strong{color:var(--green)}
+.lead{color:var(--muted);margin:12px 0 22px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.box{border:1px solid var(--line);border-radius:14px;padding:18px}
+.box h3{margin:0 0 7px}
+.date{font:700 2rem Georgia,serif;color:var(--green);display:block}
+.callout{background:var(--green-soft);border-left:4px solid var(--green);
+  border-radius:0 12px 12px 0;padding:15px 18px;margin:20px 0}
+.callout.gold{background:var(--gold-soft);border-color:var(--gold)}
+.label{display:block;text-transform:uppercase;font-size:.68rem;
+  font-weight:850;letter-spacing:.12em;color:var(--green);margin-bottom:6px}
+.small{font-size:.87rem;color:var(--muted)}
+.timeline{border-left:2px solid var(--line);padding-left:23px;margin:20px 8px}
+.event{position:relative;margin:0 0 23px}
+.event:last-child{margin-bottom:0}
+.event:before{content:"";width:10px;height:10px;position:absolute;
+  left:-29px;top:8px;background:var(--green);border-radius:50%;
+  border:2px solid var(--paper)}
+.event b{color:var(--green)}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;margin-top:16px;font-size:.94rem}
+th{text-align:left;background:var(--green-soft);color:var(--green)}
+th,td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+td:first-child{font-weight:750;min-width:135px}
+.term{border-top:1px solid var(--line);padding:15px 0}
+.term:last-child{padding-bottom:0}
+.term h3{margin:0 0 5px}
+.term p{margin:5px 0}
+.memory{font-size:.85rem;color:var(--gold)}
+.flow{display:flex;align-items:center;justify-content:center;
+  gap:10px;flex-wrap:wrap;margin:19px 0}
+.flow span{padding:10px 15px;background:var(--green-soft);
+  border-radius:12px;font-weight:750;text-align:center}
+.flow i{font-style:normal;color:var(--muted)}
+.speech{font-size:1.02rem}
+.speech p{margin:17px 0}
+details{border:1px solid var(--line);border-radius:12px;
+  margin:10px 0;overflow:hidden}
+summary{padding:14px 16px;cursor:pointer;font-weight:700;line-height:1.5}
+details[open] summary{background:var(--green-soft);color:var(--green)}
+.answer{padding:0 17px 15px}
+.answer p{margin-bottom:0}
+.flash-area{background:var(--bg);border-radius:17px;padding:18px}
+.flash-count{text-align:center;font-size:.8rem;color:var(--muted);
+  margin-bottom:12px}
+.flashcard{width:100%;border:1px solid var(--line);background:var(--paper);
+  min-height:195px;border-radius:14px;padding:24px;color:var(--ink);
+  display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:12px;text-align:center}
+.flashcard .question{font:700 1.4rem/1.4 Georgia,serif}
+.flashcard .hint{font-size:.8rem;color:var(--muted)}
+.flashcard.revealed{background:var(--green-soft)}
+.flash-controls{display:flex;justify-content:center;gap:9px;
+  margin-top:15px;flex-wrap:wrap}
+.checklist{list-style:none;padding:0}
+.checklist label{display:flex;gap:12px;align-items:flex-start;cursor:pointer}
+.checklist input{margin-top:8px;accent-color:var(--green);width:17px;height:17px}
+.checklist input:checked+span{color:var(--muted);text-decoration:line-through}
+.progress-track{height:9px;background:var(--line);border-radius:99px;overflow:hidden}
+.progress-fill{height:100%;background:var(--green);width:0;transition:width .2s}
+footer{text-align:center;color:var(--muted);font-size:.8rem;padding-top:15px}
+.no-js{background:var(--gold-soft);padding:12px;border-radius:10px}
+@media(max-width:850px){
+  .layout{grid-template-columns:1fr}
+  aside nav{position:static;display:flex;flex-wrap:wrap;gap:3px}
+  .nav-title{width:100%;margin-bottom:3px}
+  aside a{background:#ffffff80;font-size:.83rem;padding:6px 10px}
+}
+@media(max-width:540px){
+  body{font-size:15px}
+  .wrap{padding:20px 13px 40px}
+  .topbar-inner{padding:10px 13px}
+  .brand{font-size:.73rem}
+  .topbar .btn{font-size:.76rem;padding:7px 9px}
+  .hero{padding:28px 23px}
+  section{padding:22px 18px}
+  .grid2{grid-template-columns:1fr}
+  h2{font-size:1.45rem}
+  th,td{padding:10px}
+}
+@media print{
+  body{background:#fff;font-size:10.5pt;line-height:1.5;color:#000}
+  .topbar,aside,.interactive,.no-print{display:none!important}
+  .wrap{max-width:none;padding:0}
+  .layout{display:block;margin-top:18px}
+  .hero{background:#fff!important;color:#000;padding:0;border-radius:0}
+  .hero p{color:#333}
+  .hero:after,.pills{display:none}
+  h1{font-size:32pt}
+  section{box-shadow:none;border:1px solid #ccc;padding:17px;
+    border-radius:8px;margin-bottom:14px;break-inside:auto}
+  h2,h3,.section-top{break-after:avoid}
+  .box,.callout,.term,.event,details,tr{break-inside:avoid}
+  .lead,.small{color:#444}
+  details .answer{display:block!important}
+  details:not([open]) .answer{display:block!important}
+  summary{list-style:none}
+  a{color:#000;text-decoration:none}
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">POLSKI / ROMANTYZM</div>
+    <div class="tools">
+      <button class="btn" id="printButton">Drukuj / PDF</button>
+      <a class="btn primary" href="#odpowiedz" style="text-decoration:none">Odpowiedź ustna</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="eyebrow">Notatka do nauki • na podstawie 3 zdjęć</div>
+    <h1>Romantyzm</h1>
+    <p>Daty, pojęcia, filozofia i sztuka — uporządkowane tak, żeby
+      nie tylko zapamiętać materiał, ale też swobodnie o nim opowiedzieć.</p>
+    <div class="pills">
+      <span class="pill">Polska: 1822–1864</span>
+      <span class="pill">Uczucie i intuicja</span>
+      <span class="pill">Natura i tajemnica</span>
+      <span class="pill">Poeta — wieszcz</span>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside aria-label="Spis treści">
+      <nav>
+        <div class="nav-title">PLAN NAUKI</div>
+        <a href="#podstawy">01 · Daty i nazwa</a>
+        <a href="#historia">02 · Historia</a>
+        <a href="#pojecia">03 · Najważniejsze pojęcia</a>
+        <a href="#poezja">04 · Poezja i poeta</a>
+        <a href="#filozofia">05 · Filozofia i Hegel</a>
+        <a href="#malarstwo">06 · Malarstwo</a>
+        <a href="#odpowiedz">07 · Gotowa wypowiedź</a>
+        <a href="#pytania">08 · Pytania do odpowiedzi</a>
+        <a href="#fiszki">09 · Fiszki</a>
+        <a href="#checklista">10 · Sprawdź gotowość</a>
+      </nav>
+    </aside>
+
+    <main>
+      <section id="podstawy">
+        <div class="section-top"><span class="num">01</span><h2>Daty i nazwa epoki</h2></div>
+        <p class="lead">Najpierw zapamiętaj ramy czasowe. Potem wyjaśnij, skąd wzięła się nazwa.</p>
+
+        <div class="grid2">
+          <div class="box">
+            <span class="label">Początek w Polsce</span>
+            <span class="date">1822</span>
+            Wydanie <strong>„Ballad i romansów” Adama Mickiewicza</strong>.
+          </div>
+          <div class="box">
+            <span class="label">Koniec w Polsce</span>
+            <span class="date">1864</span>
+            <strong>Upadek powstania styczniowego</strong> — umowna granica epoki.
+          </div>
+        </div>
+
+        <div class="callout gold">
+          <span class="label">Ważne doprecyzowanie</span>
+          Daty <strong>1822–1864 dotyczą romantyzmu w Polsce</strong>.
+          W Europie romantyzm rozwijał się wcześniej, od schyłku XVIII wieku,
+          przede wszystkim w pierwszej połowie XIX wieku.
+        </div>
+
+        <h3>Czym był romantyzm?</h3>
+        <p><strong>Romantyzm</strong> to prąd ideowo-artystyczny obejmujący
+          <strong>literaturę, sztukę i filozofię</strong>.
+          To również nazwa epoki, w której ten prąd odgrywał dominującą rolę.</p>
+
+        <h3>Jak zmieniało się znaczenie słowa „romantyczny”?</h3>
+        <ol>
+          <li><strong>Druga połowa XVIII wieku, Anglia:</strong>
+            określenie <strong>malowniczego pejzażu</strong>.</li>
+          <li><strong>Później:</strong> nazwa cech osobowości, takich jak
+            <strong>wrażliwość, uczuciowość i marzycielskość</strong>.</li>
+          <li><strong>Przełom XVIII i XIX wieku:</strong> określenie
+            <strong>nowatorskiej poezji</strong> — wytworu natchnienia,
+            wizji i marzenia.</li>
+        </ol>
+
+        <div class="callout">
+          <span class="label">Powiedz własnymi słowami</span>
+          „Nazwa epoki wiąże się ze słowem «romantyczny». Najpierw opisywano
+          nim malowniczą przyrodę, następnie wrażliwego i marzycielskiego
+          człowieka, a później nową poezję opartą na natchnieniu”.
+        </div>
+      </section>
+
+      <section id="historia">
+        <div class="section-top"><span class="num">02</span><h2>Tło historyczne</h2></div>
+        <p class="lead">Trzy wydarzenia wymienione w zeszycie i ich znaczenie dla epoki.</p>
+        <div class="timeline">
+          <div class="event">
+            <b>1789 — Wielka Rewolucja Francuska</b>
+            <div>Podważyła dawny porządek społeczny i polityczny.
+              Wiązała się z hasłami wolności i równości.</div>
+          </div>
+          <div class="event">
+            <b>1799 — dojście Napoleona do władzy</b>
+            <div>Ważny etap przemian w Europie. Z Napoleonem wiązano
+              nadzieje na zmianę porządku politycznego, także na odzyskanie
+              niepodległości przez Polskę.</div>
+          </div>
+          <div class="event">
+            <b>1848–1849 — Wiosna Ludów</b>
+            <div>Fala rewolucji i wystąpień w Europie, związanych m.in.
+              z dążeniami do wolności oraz praw narodowych i obywatelskich.</div>
+          </div>
+        </div>
+        <p class="small">Daty i wydarzenia pochodzą ze zdjęć;
+          krótkie objaśnienia ich znaczenia dodano dla łatwiejszego zrozumienia.</p>
+        <div class="callout">
+          <strong>Skojarzenie:</strong> romantyzm rozwijał się w atmosferze
+          <strong>buntu, wielkich przemian i dążeń do wolności</strong>.
+        </div>
+      </section>
+
+      <section id="pojecia">
+        <div class="section-top"><span class="num">03</span><h2>Najważniejsze pojęcia</h2></div>
+        <p class="lead">Ucz się według schematu: nazwa → definicja → krótkie skojarzenie.</p>
+
+        <article class="term">
+          <h3>Okres „burzy i naporu” — Sturm und Drang</h3>
+          <p>Nurt w literaturze niemieckiej, którego nazwa pochodzi od tytułu
+            dramatu <strong>Friedricha Maximiliana Klingera</strong>.</p>
+          <p>Zakładał <strong>odejście od klasycystycznych reguł sztuki</strong>,
+            zawierał <strong>krytykę cywilizacji</strong> i <strong>pochwałę uczuć</strong>.</p>
+          <div class="memory">Zapamiętaj: bunt przeciw regułom + uczucia.</div>
+          <p class="small">Doprecyzowanie: nurt ten poprzedzał romantyzm
+            i przygotowywał jego rozwój.</p>
+        </article>
+
+        <article class="term">
+          <h3>Gotycyzm</h3>
+          <p>Tendencja artystyczna odwołująca się do <strong>odległej przeszłości,
+            zwłaszcza średniowiecza</strong>.</p>
+          <p>Przejawiała się m.in. w <strong>poezji ruin</strong>, w której opisy
+            zniszczonych budowli i cmentarzy stanowiły tło refleksji filozoficznych,
+            oraz w <strong>powieści gotyckiej</strong>.</p>
+          <div class="memory">Zapamiętaj: średniowiecze, ruiny, cmentarz, tajemnica.</div>
+        </article>
+
+        <article class="term">
+          <h3>Metafizyka</h3>
+          <p>Dziedzina filozofii rozważająca podstawowe kwestie dotyczące bytu
+            i rzeczywistości. W kontekście tych notatek wiąże się z pytaniami
+            o to, co <strong>pozazmysłowe i niedostępne bezpośredniemu poznaniu</strong>.</p>
+          <div class="memory">Zapamiętaj: pytania o rzeczywistość wykraczającą poza zmysły.</div>
+        </article>
+
+        <article class="term">
+          <h3>Irracjonalizm</h3>
+          <p>Przekonanie, że <strong>sam rozum nie wystarcza do poznania świata</strong>,
+            ponieważ rzeczywistość kryje tajemnice niedostępne poznaniu racjonalnemu.</p>
+          <p>Oznacza dowartościowanie <strong>intuicji, instynktu, wiary i uczuć</strong>.</p>
+          <div class="memory">Zapamiętaj: nie tylko rozum — również intuicja i wiara.</div>
+        </article>
+
+        <article class="term">
+          <h3>Orientalizm</h3>
+          <p><strong>Fascynacja Wschodem</strong>: jego życiem, kulturą,
+            obyczajami oraz krajobrazem.</p>
+          <div class="memory">Zapamiętaj: Wschód i jego odmienność.</div>
+        </article>
+
+        <article class="term">
+          <h3>Ludowość</h3>
+          <p>Wprowadzanie do sztuki <strong>elementów kultury ludowej</strong>,
+            np. wierzeń, obrzędów i opowieści.</p>
+          <p>W notatkach wymieniono także zainteresowanie
+            <strong>mitologią skandynawską i celtycką</strong>.</p>
+          <div class="memory">Zapamiętaj: wierzenia i tradycje ludu jako źródło inspiracji.</div>
+        </article>
+
+        <article class="term">
+          <h3>Subiektywizm</h3>
+          <p>Przedstawianie świata z <strong>osobistej perspektywy</strong>,
+            przez pryzmat własnych uczuć, przeżyć i nastrojów.</p>
+          <p>W romantycznym opisie świata ważne były
+            <strong>uczuciowość i nastrojowość</strong>; pojawiały się też
+            <strong>siły nadprzyrodzone</strong>.</p>
+          <div class="memory">Zapamiętaj: świat widziany przez „ja”.</div>
+          <p class="small">Doprecyzowanie: obecność sił nadprzyrodzonych jest cechą
+            romantycznej wizji świata, a nie samą definicją subiektywizmu.</p>
+        </article>
+
+        <div class="callout gold">
+          <span class="label">Nie pomyl pojęć</span>
+          <strong>Metafizyka</strong> mówi o przedmiocie rozważań — np. naturze bytu
+          i rzeczywistości pozazmysłowej.
+          <strong>Irracjonalizm</strong> dotyczy poznania — podkreśla ograniczenia rozumu.
+          <strong>Subiektywizm</strong> dotyczy perspektywy — świat oglądamy przez własne przeżycia.
+        </div>
+      </section>
+
+      <section id="poezja">
+        <div class="section-top"><span class="num">04</span><h2>Poezja, poeta i gatunki</h2></div>
+
+        <h3>Jak romantycy pojmowali poezję?</h3>
+        <p>Poezja była dla nich <strong>absolutem</strong>, czyli wartością najwyższą,
+          a także <strong>tajemniczą i potężną siłą</strong>.
+          Nie traktowali jej jedynie jako sprawnego układania słów.</p>
+
+        <h3>Kim był poeta?</h3>
+        <p>Poeta to <strong>pośrednik między światem duchowym a materialnym</strong>.
+          Przyznawano mu wyjątkowo ważną rolę w społeczeństwie.</p>
+        <div class="grid2">
+          <div class="box">
+            <h3>Wieszcz i mistrz</h3>
+            Charyzmatyczny przewodnik, który potrafi dostrzegać więcej
+            niż inni i przekazywać głębsze prawdy.
+          </div>
+          <div class="box">
+            <h3>Kreator</h3>
+            Twórca, który dzięki wyobraźni powołuje do istnienia własny
+            świat artystyczny.
+          </div>
+        </div>
+
+        <h3>Gatunki synkretyczne</h3>
+        <p><strong>Synkretyzm rodzajowy</strong> to łączenie w jednym utworze
+          cech <strong>dwóch lub trzech rodzajów literackich</strong>.</p>
+
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Rodzaj</th><th>Co wnosi do utworu?</th></tr></thead>
+            <tbody>
+              <tr><td>Liryka</td><td>Uczucia, przeżycia, nastroje i refleksje.</td></tr>
+              <tr><td>Epika</td><td>Opowiadanie o wydarzeniach, fabułę i narrację.</td></tr>
+              <tr><td>Dramat</td><td>Dialogi, monologi i bezpośrednie przedstawienie działania postaci.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p><strong>Przykłady z notatek:</strong> ballada i dramat romantyczny.</p>
+        <div class="callout">
+          <span class="label">Zdanie na odpowiedź</span>
+          „Romantycy chętnie łączyli różne rodzaje literackie.
+          Dlatego ballada i dramat romantyczny mogą zawierać jednocześnie
+          elementy liryki, epiki i dramatu”.
+        </div>
+      </section>
+
+      <section id="filozofia">
+        <div class="section-top"><span class="num">05</span><h2>Filozofia epoki</h2></div>
+        <p class="lead">Kluczowa zmiana: poznanie nie ogranicza się do rozumu i doświadczenia.</p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Punkt porównania</th><th>Oświecenie</th><th>Romantyzm</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Poznanie</td>
+                <td>Nacisk na rozum i doświadczenie empiryczne.</td>
+                <td>Dowartościowanie intuicji, uczuć, wiary i poznania wewnętrznego.</td>
+              </tr>
+              <tr>
+                <td>Obraz świata</td>
+                <td>Świat badany i wyjaśniany racjonalnie.</td>
+                <td>Świat mający także wymiar duchowy i tajemniczy.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="small">To szkolne zestawienie głównych tendencji, nie pełny opis
+          wszystkich poglądów obu epok.</p>
+
+        <h3>Idealizm romantyczny</h3>
+        <p>W notatkach oznacza odejście od przekonania, że najwyższą formą wiedzy
+          jest wyłącznie wiedza oparta na rozumie i doświadczeniu.
+          Ważne stają się <strong>intuicja, wewnętrzne przeżycie i duchowy wymiar świata</strong>.</p>
+
+        <h3>Panteizm</h3>
+        <p>Pogląd <strong>utożsamiający Boga z naturą lub całością wszechświata</strong>.
+          Natura ma w takim ujęciu boski wymiar.</p>
+        <div class="callout gold">
+          <strong>Uwaga:</strong> romantyczny idealizm i panteizm nie są synonimami.
+          Nie wszyscy romantycy podzielali też identyczne poglądy filozoficzne.
+        </div>
+
+        <h3>Georg Wilhelm Friedrich Hegel</h3>
+        <p>Filozof reprezentujący <strong>idealistyczną koncepcję bytu</strong>.
+          Według ujęcia przedstawionego w zeszycie
+          <strong>świat jest odzwierciedleniem ducha</strong>.</p>
+
+        <p>Hegel był zwolennikiem <strong>determinizmu dziejowego</strong>:
+          dzieje nie są przypadkowe, lecz mają wewnętrzną prawidłowość.</p>
+
+        <h3>Rozwój przez sprzeczności — dialektyka</h3>
+        <p>Ważną rolę w rozwoju rzeczywistości odgrywa
+          <strong>ścieranie się sprzecznych sił</strong>.</p>
+        <div class="flow" aria-label="Schemat dialektyczny">
+          <span>Teza</span><i>↔</i><span>Antyteza</span><i>→</i><span>Synteza</span>
+        </div>
+        <p class="small">Schemat „teza–antyteza–synteza” to popularne szkolne
+          uproszczenie dialektyki Hegla, a nie jego własna ścisła formuła.</p>
+
+        <div class="callout">
+          <span class="label">Zapamiętaj o Heglu trzy rzeczy</span>
+          <strong>Duch → prawidłowość dziejów → rozwój przez sprzeczności.</strong>
+        </div>
+      </section>
+
+      <section id="malarstwo">
+        <div class="section-top"><span class="num">06</span><h2>Malarstwo romantyczne</h2></div>
+        <p>Na zdjęciu wymieniono następujących malarzy:</p>
+        <ul>
+          <li><strong>Eugène Delacroix</strong>,</li>
+          <li><strong>Piotr Michałowski</strong>,</li>
+          <li><strong>Caspar David Friedrich</strong>.</li>
+        </ul>
+        <p>Widoczna cecha malarstwa romantycznego:
+          <strong>dominująca natura</strong>.</p>
+
+        <div class="callout">
+          <span class="label">Jak to rozumieć? — objaśnienie</span>
+          Natura może być potężniejsza od człowieka, budzić zachwyt, lęk
+          i poczucie tajemnicy. Krajobraz pomaga również wyrażać nastrój
+          i przeżycia człowieka.
+        </div>
+
+        <p class="small">Na zdjęciu widnieją zapisy „Delacroix (17),
+          Michałowski (21), Friedrich (30)”, ale nie ma widocznych tytułów dzieł.
+          Liczb tych nie potraktowano jako dat ani nie dopisano do nich obrazów.
+          Dalsza część notatki o malarstwie jest poza kadrem.</p>
+      </section>
+
+      <section id="odpowiedz">
+        <div class="section-top"><span class="num">07</span><h2>Gotowa odpowiedź ustna</h2></div>
+        <p class="lead">Wersja na około 3–4 minuty. Zapamiętaj kolejność myśli,
+          nie każde słowo.</p>
+
+        <div class="callout">
+          <span class="label">Plan wypowiedzi</span>
+          Daty i nazwa → historia → cechy i pojęcia → poeta i literatura
+          → filozofia → malarstwo.
+        </div>
+
+        <div class="speech">
+          <p><strong>Romantyzm był prądem ideowo-artystycznym</strong>, który obejmował
+            literaturę, sztukę i filozofię. W Polsce jego umowne ramy to
+            <strong>1822–1864</strong>. Początek wyznacza wydanie „Ballad i romansów”
+            Adama Mickiewicza, a koniec — upadek powstania styczniowego.</p>
+
+          <p>Nazwa epoki wiąże się ze słowem „romantyczny”. W drugiej połowie
+            XVIII wieku w Anglii opisywano nim malownicze krajobrazy.
+            Później określano tak wrażliwość, uczuciowość i marzycielskość,
+            a na przełomie XVIII i XIX wieku — nowatorską poezję powstającą
+            z natchnienia, wizji i marzenia.</p>
+
+          <p>Tłem historycznym epoki były wielkie przemiany, między innymi
+            <strong>rewolucja francuska w 1789 roku</strong>, dojście Napoleona
+            do władzy w 1799 roku oraz <strong>Wiosna Ludów w latach 1848–1849</strong>.
+            Romantyzm poprzedzał niemiecki okres „burzy i naporu”, który
+            odrzucał klasycystyczne reguły i dowartościowywał uczucia.</p>
+
+          <p>Romantycy uważali, że <strong>sam rozum nie wystarcza do poznania
+            świata</strong>. Ważne były intuicja, wiara i uczucia, co wiąże się
+            z irracjonalizmem. Interesowali się metafizyką, czyli pytaniami
+            o byt i rzeczywistość wykraczającą poza bezpośrednie poznanie zmysłowe.
+            Świat przedstawiali subiektywnie, przez pryzmat osobistych przeżyć.</p>
+
+          <p>Do istotnych tendencji należały <strong>ludowość</strong>, czyli czerpanie
+            z wierzeń i obrzędów ludu, oraz <strong>orientalizm</strong>, czyli
+            fascynacja Wschodem. Ważny był także <strong>gotycyzm</strong> —
+            zainteresowanie średniowieczem, ruinami, cmentarzami i atmosferą tajemnicy.</p>
+
+          <p><strong>Poezję traktowano jako wartość najwyższą i potężną siłę.</strong>
+            Poeta był pośrednikiem między światem materialnym a duchowym,
+            charyzmatycznym mistrzem, wieszczem i kreatorem.
+            Charakterystyczny był synkretyzm rodzajowy, czyli łączenie cech
+            liryki, epiki i dramatu, na przykład w balladzie i dramacie romantycznym.</p>
+
+          <p>W filozofii dowartościowano duchowy wymiar rzeczywistości.
+            Panteizm utożsamiał Boga z naturą lub całym wszechświatem.
+            Ważnym filozofem był <strong>Hegel</strong>, przedstawiciel idealizmu.
+            Według niego dzieje nie są przypadkowe, a rozwój dokonuje się przez
+            sprzeczności. Szkolnie przedstawia się to schematem:
+            teza, antyteza, synteza.</p>
+
+          <p>W malarstwie romantycznym ważną rolę odgrywała
+            <strong>potężna i tajemnicza natura</strong>.
+            Wśród malarzy wymienionych w notatkach są Delacroix,
+            Michałowski i Friedrich. Podsumowując, romantyzm szczególnie
+            cenił <strong>uczucia, wyobraźnię, duchowość i indywidualne przeżycie</strong>.</p>
+        </div>
+      </section>
+
+      <section id="pytania">
+        <div class="section-top"><span class="num">08</span><h2>Pytania do powtórki</h2></div>
+        <p class="lead">Najpierw odpowiedz na głos. Dopiero potem rozwiń odpowiedź.</p>
+
+        <details>
+          <summary>1. Jakie są ramy romantyzmu w Polsce i co je wyznacza?</summary>
+          <div class="answer"><p>1822 — wydanie „Ballad i romansów” Mickiewicza;
+            1864 — upadek powstania styczniowego. Są to granice umowne.</p></div>
+        </details>
+        <details>
+          <summary>2. Co pierwotnie znaczyło słowo „romantyczny”?</summary>
+          <div class="answer"><p>W drugiej połowie XVIII wieku w Anglii oznaczało
+            malowniczy pejzaż. Później odnosiło się do uczuciowości i marzycielskości,
+            a następnie do nowatorskiej poezji opartej na natchnieniu.</p></div>
+        </details>
+        <details>
+          <summary>3. Wymień wydarzenia historyczne z notatki.</summary>
+          <div class="answer"><p>Rewolucja francuska — 1789; dojście Napoleona do władzy
+            — 1799; Wiosna Ludów — 1848–1849.</p></div>
+        </details>
+        <details>
+          <summary>4. Czym był okres „burzy i naporu”?</summary>
+          <div class="answer"><p>Nurtem literatury niemieckiej poprzedzającym romantyzm.
+            Jego nazwa pochodzi od dramatu Klingera „Sturm und Drang”.
+            Odrzucał klasycystyczne reguły, krytykował cywilizację i wychwalał uczucia.</p></div>
+        </details>
+        <details>
+          <summary>5. Czym różnią się metafizyka i irracjonalizm?</summary>
+          <div class="answer"><p>Metafizyka rozważa podstawowe kwestie bytu,
+            także rzeczywistość pozazmysłową. Irracjonalizm podkreśla ograniczenia
+            rozumu i znaczenie innych dróg poznania: intuicji, wiary czy uczuć.</p></div>
+        </details>
+        <details>
+          <summary>6. Co to są gotycyzm, orientalizm i ludowość?</summary>
+          <div class="answer"><p>Gotycyzm — zainteresowanie odległą przeszłością,
+            szczególnie średniowieczem, ruinami i tajemnicą.
+            Orientalizm — fascynacja Wschodem.
+            Ludowość — czerpanie z kultury ludu, np. wierzeń i obrzędów.</p></div>
+        </details>
+        <details>
+          <summary>7. Na czym polega subiektywizm?</summary>
+          <div class="answer"><p>Na przedstawianiu świata z osobistej perspektywy,
+            przez własne uczucia, przeżycia i nastroje.</p></div>
+        </details>
+        <details>
+          <summary>8. Jaką rolę przypisywano poecie i poezji?</summary>
+          <div class="answer"><p>Poezja była absolutem oraz tajemniczą, potężną siłą.
+            Poeta był pośrednikiem między światem duchowym i materialnym,
+            wieszczem, mistrzem oraz kreatorem.</p></div>
+        </details>
+        <details>
+          <summary>9. Czym jest synkretyzm rodzajowy? Podaj przykłady.</summary>
+          <div class="answer"><p>To łączenie cech dwóch lub trzech rodzajów literackich:
+            liryki, epiki i dramatu. Przykłady: ballada i dramat romantyczny.</p></div>
+        </details>
+        <details>
+          <summary>10. Na czym polega panteizm?</summary>
+          <div class="answer"><p>Na utożsamieniu Boga z naturą lub całością wszechświata.
+            Nie jest synonimem idealizmu.</p></div>
+        </details>
+        <details>
+          <summary>11. Co trzeba wiedzieć o Heglu?</summary>
+          <div class="answer"><p>Reprezentował idealizm, podkreślał duchową podstawę
+            rzeczywistości i prawidłowość procesu dziejowego.
+            Rozwój wiązał ze sprzecznościami. Uproszczony schemat:
+            teza — antyteza — synteza.</p></div>
+        </details>
+        <details>
+          <summary>12. Jakich malarzy wymieniono i co było ważne w ich epoce?</summary>
+          <div class="answer"><p>Delacroix, Michałowski i Friedrich.
+            W widocznym fragmencie notatki podkreślono dominującą rolę natury.</p></div>
+        </details>
+      </section>
+
+      <section id="fiszki" class="interactive">
+        <div class="section-top"><span class="num">09</span><h2>Fiszki — szybka powtórka</h2></div>
+        <p class="lead">Kliknij kartę, żeby zobaczyć odpowiedź.
+          Strzałki na klawiaturze zmieniają karty, gdy karta jest zaznaczona.</p>
+        <noscript><p class="no-js">Fiszki wymagają JavaScript.
+          Cały materiał znajdziesz także w notatce i pytaniach powyżej.</p></noscript>
+        <div class="flash-area">
+          <div class="flash-count" id="flashCount"></div>
+          <button class="flashcard" id="flashcard" aria-label="Fiszka — pokaż odpowiedź">
+            <span class="question" id="flashText"></span>
+            <span class="hint" id="flashHint">Kliknij, aby odsłonić odpowiedź</span>
+          </button>
+          <div class="flash-controls">
+            <button class="btn" id="previous">← Poprzednia</button>
+            <button class="btn" id="shuffle">Pomieszaj</button>
+            <button class="btn primary" id="next">Następna →</button>
+          </div>
+          <div role="status" aria-live="polite" id="flashStatus" class="small"
+            style="text-align:center;margin-top:10px"></div>
+        </div>
+      </section>
+
+      <section id="checklista">
+        <div class="section-top"><span class="num">10</span><h2>Czy jesteś gotowy?</h2></div>
+        <p class="lead">Zaznacz temat dopiero wtedy, gdy potrafisz wyjaśnić go bez zaglądania.</p>
+        <div class="progress-track no-print"><div class="progress-fill" id="progressFill"></div></div>
+        <p class="small no-print" id="progressText" aria-live="polite">Opanowane: 0 / 8</p>
+        <ul class="checklist">
+          <li><label><input type="checkbox"><span>Znam daty 1822 i 1864 oraz wydarzenia graniczne.</span></label></li>
+          <li><label><input type="checkbox"><span>Wyjaśniam zmianę znaczenia słowa „romantyczny”.</span></label></li>
+          <li><label><input type="checkbox"><span>Wymieniam trzy wydarzenia historyczne i ich daty.</span></label></li>
+          <li><label><input type="checkbox"><span>Wyjaśniam okres „burzy i naporu” oraz siedem pozostałych pojęć.</span></label></li>
+          <li><label><input type="checkbox"><span>Opowiadam o poecie, poezji i synkretyzmie rodzajowym.</span></label></li>
+          <li><label><input type="checkbox"><span>Odróżniam idealizm, irracjonalizm i panteizm.</span></label></li>
+          <li><label><input type="checkbox"><span>Przedstawiam najważniejsze poglądy Hegla.</span></label></li>
+          <li><label><input type="checkbox"><span>Wymieniam malarzy i potrafię wygłosić całą odpowiedź.</span></label></li>
+        </ul>
+        <div class="callout">
+          <span class="label">Ostatnia minuta przed odpowiedzią</span>
+          <strong>1822–1864 · uczucia i intuicja · tajemnica · ludowość · Wschód ·
+          poeta-wieszcz · synkretyzm · duch · Hegel · potężna natura.</strong>
+        </div>
+      </section>
+
+      <footer>
+        Materiał z przesłanych zdjęć uporządkowano i językowo dopracowano.
+        Uzupełnienia objaśniające oraz miejsca niepełne zaznaczono w treści.
+        <br>Jeden plik • bez zewnętrznych bibliotek • działa offline
+      </footer>
+    </main>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  const cards = [
+    ["Ramy romantyzmu w Polsce?", "1822–1864."],
+    ["Co wydarzyło się w 1822 roku?", "Wydano „Ballady i romanse” Adama Mickiewicza — umowny początek polskiego romantyzmu."],
+    ["Co wyznacza koniec polskiego romantyzmu?", "Upadek powstania styczniowego w 1864 roku."],
+    ["Pierwsze znaczenie słowa „romantyczny” w notatkach?", "Malowniczy pejzaż — Anglia, druga połowa XVIII wieku."],
+    ["Jak później rozumiano słowo „romantyczny”?", "Jako wrażliwość, uczuciowość i marzycielskość, a następnie jako cechę nowatorskiej poezji natchnienia, wizji i marzenia."],
+    ["Trzy wydarzenia historyczne?", "1789 — rewolucja francuska; 1799 — dojście Napoleona do władzy; 1848–1849 — Wiosna Ludów."],
+    ["Sturm und Drang — co to znaczy?", "„Burza i napór” — nurt niemiecki poprzedzający romantyzm, krytykujący klasycystyczne reguły i dowartościowujący uczucia."],
+    ["Od czego pochodzi nazwa „burza i napór”?", "Od tytułu dramatu Friedricha Maximiliana Klingera."],
+    ["Gotycyzm?", "Zainteresowanie odległą przeszłością, zwłaszcza średniowieczem; ruiny, cmentarze, tajemnica, poezja ruin i powieść gotycka."],
+    ["Metafizyka?", "Rozważania o podstawowych kwestiach bytu; w kontekście notatek także o rzeczywistości pozazmysłowej."],
+    ["Irracjonalizm?", "Przekonanie o ograniczeniach rozumu i znaczeniu intuicji, wiary, instynktu oraz uczuć w poznaniu."],
+    ["Orientalizm?", "Fascynacja życiem, kulturą, obyczajami i krajobrazem Wschodu."],
+    ["Ludowość?", "Czerpanie z kultury ludowej, np. wierzeń, obrzędów i opowieści."],
+    ["Jakie mitologie wymieniono w notatkach?", "Skandynawską i celtycką."],
+    ["Subiektywizm?", "Przedstawianie świata z osobistej perspektywy, przez własne uczucia i przeżycia."],
+    ["Czym była poezja dla romantyków?", "Absolutem, wartością najwyższą, tajemniczą i potężną siłą."],
+    ["Kim był poeta?", "Pośrednikiem między światem duchowym i materialnym; charyzmatycznym mistrzem, wieszczem i kreatorem."],
+    ["Synkretyzm rodzajowy?", "Łączenie cech dwóch lub trzech rodzajów literackich: liryki, epiki i dramatu."],
+    ["Dwa przykłady utworów synkretycznych?", "Ballada i dramat romantyczny."],
+    ["Co romantyzm dowartościował w poznaniu?", "Intuicję, uczucia, wiarę, przeżycie wewnętrzne i duchowy wymiar rzeczywistości."],
+    ["Panteizm?", "Utożsamienie Boga z naturą lub całym wszechświatem."],
+    ["Pełne nazwisko Hegla?", "Georg Wilhelm Friedrich Hegel."],
+    ["Trzy skojarzenia z Heglem?", "Idealizm i duchowa podstawa świata; prawidłowość dziejów; rozwój przez sprzeczności."],
+    ["Determinizm dziejowy?", "Pogląd, że dzieje nie są przypadkowe, lecz podlegają wewnętrznym prawidłowościom."],
+    ["Szkolny schemat dialektyki?", "Teza → antyteza → synteza. To uproszczenie, nie ścisła własna formuła Hegla."],
+    ["Malarze wymienieni na zdjęciu?", "Eugène Delacroix, Piotr Michałowski, Caspar David Friedrich."],
+    ["Widoczna w notatce cecha malarstwa?", "Dominująca natura — potężna, tajemnicza, wywołująca silne przeżycia."]
+  ];
+
+  let order = cards.map((_,i)=>i);
+  let current = 0;
+  let revealed = false;
+  const card = document.getElementById("flashcard");
+  const text = document.getElementById("flashText");
+  const hint = document.getElementById("flashHint");
+  const count = document.getElementById("flashCount");
+  const status = document.getElementById("flashStatus");
+
+  function render(){
+    const pair = cards[order[current]];
+    count.textContent = "Fiszka " + (current+1) + " z " + order.length;
+    text.textContent = pair[revealed ? 1 : 0];
+    hint.textContent = revealed
+      ? "Kliknij, aby wrócić do pytania"
+      : "Kliknij, aby odsłonić odpowiedź";
+    card.classList.toggle("revealed",revealed);
+    card.setAttribute("aria-label",revealed
+      ? "Odpowiedź: " + pair[1] + ". Kliknij, aby wrócić do pytania."
+      : "Pytanie: " + pair[0] + " Kliknij, aby pokazać odpowiedź.");
+  }
+
+  function move(step){
+    current = (current + step + order.length) % order.length;
+    revealed = false;
+    status.textContent = "";
+    render();
+  }
+
+  card.addEventListener("click",function(){revealed=!revealed;render()});
+  card.addEventListener("keydown",function(e){
+    if(e.key==="ArrowRight"){e.preventDefault();move(1)}
+    if(e.key==="ArrowLeft"){e.preventDefault();move(-1)}
+  });
+  document.getElementById("previous").addEventListener("click",()=>move(-1));
+  document.getElementById("next").addEventListener("click",()=>move(1));
+  document.getElementById("shuffle").addEventListener("click",function(){
+    for(let i=order.length-1;i>0;i--){
+      const j=Math.floor(Math.random()*(i+1));
+      [order[i],order[j]]=[order[j],order[i]];
+    }
+    current=0;revealed=false;render();
+    status.textContent="Kolejność fiszek została zmieniona.";
+  });
+  render();
+
+  const checks = [...document.querySelectorAll(".checklist input")];
+  function updateProgress(){
+    const done=checks.filter(c=>c.checked).length;
+    document.getElementById("progressFill").style.width=(done/checks.length*100)+"%";
+    document.getElementById("progressText").textContent=
+      "Opanowane: "+done+" / "+checks.length+
+      (done===checks.length ? " — czas na próbę odpowiedzi na głos!" : "");
+  }
+  checks.forEach(c=>c.addEventListener("change",updateProgress));
+  updateProgress();
+
+  let printState=[];
+  function expandForPrint(){
+    const all=[...document.querySelectorAll("details")];
+    printState=all.map(d=>d.open);
+    all.forEach(d=>d.open=true);
+  }
+  function restoreAfterPrint(){
+    document.querySelectorAll("details").forEach((d,i)=>{
+      if(typeof printState[i]==="boolean")d.open=printState[i];
+    });
+  }
+  window.addEventListener("beforeprint",expandForPrint);
+  window.addEventListener("afterprint",restoreAfterPrint);
+  document.getElementById("printButton").addEventListener("click",()=>window.print());
+})();
+</script>
+</body>
+</html>
